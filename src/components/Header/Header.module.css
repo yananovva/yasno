@@ -1,0 +1,27 @@
+.header__logo {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 400;
+
+}
+
+.header__nav,
+.header__layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__menu {
+    color:var(--dark);
+    font-weight: 300;
+}
+
+
+.header__login {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+

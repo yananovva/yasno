@@ -1,0 +1,28 @@
+.button {
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.25s;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    color: var(--white);
+    background: var(--secondary);
+}
+
+.button:hover {
+    background: var(--light);
+    border: 1px solid var(--secondary);
+    color: var(--primary);
+}
+
+.small_button {
+    width: 100px;
+    height: 65px;
+    padding: 10px 20px;
+}
+
+.big_button {
+    width: 200px;
+    height: 100px;
+    padding: 22px 40px;
+}
