@@ -1,27 +1,57 @@
 .header__logo {
     color: var(--primary);
     text-transform: uppercase;
-    font-weight: 400;
-
+    font-weight: 900;
+    font-size: 35px;
+    padding-left: 70px;
+    cursor: pointer;
 }
 
-.header__nav,
 .header__layout {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    position: relative;
+}
+
+.header__layout {
+    height: 80px;
 }
 
 .header__menu {
     color:var(--dark);
-    font-weight: 300;
+    font-weight: 400;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
 }
 
 
 .header__login {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
+    padding-right: 100px;
+    cursor: pointer;
+
 }
+
+.header__icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+}
+
+.header__login a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+
 
