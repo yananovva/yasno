@@ -16,13 +16,11 @@
 }
 
 .small_button {
-    width: 100px;
-    height: 65px;
-    padding: 10px 20px;
+    font-weight: 300;
+    padding: 7px 17px;
 }
 
 .big_button {
-    width: 200px;
-    height: 100px;
-    padding: 22px 40px;
+    font-weight: 700;
+    padding: 10px 25px;
 }
