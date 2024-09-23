@@ -1,6 +1,8 @@
 import styles from '@/components/MainPage/MainPage.module.css';
 import Button from "@/components/Button/Button";
 import ToggleSwitch from "@/components/ToggleSwitch/ToggleSwitch";
+import Link from "next/link";
+import Image from "next/image";
 
 
 function MainPage() {
@@ -16,23 +18,31 @@ function MainPage() {
                         <div className={styles['main__actions']}>
                             <ToggleSwitch/>
                             <div className={styles['main__button']}>
-                            <Button size='big'>Подобрать психолога</Button>
+                                <Link href='/AuthPage'>
+
+                                    By{""}
+                                    <Button size='big'>Подобрать психолога</Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                     <div className={styles['main__banner']}>
                         <div className={styles['banner__note']}>
-                            <img
-                                src='https://assets.yasno.live/assets/main-page/banner-note-c2c88ef29eb46e153744419daed0294b8732d0018f340a6b6b2fb88b51d298b2.png'
+                            <Image
+                                src='http://localhost:3000/client-foto.png'
                                 alt='Онлайн консультация пациента с психологом'
                                 className={styles['client-photo']}
+                                width={600}
+                                height={600}
                             />
                         </div>
                         <div className={styles['banner__phone']}>
-                            <img
-                                src='https://assets.yasno.live/assets/main-page/banner-phone-d2a2225bb0a9c084e5f6d32f9795797708123fc50b6163ee7bc664fe3f31cc0b.png'
+                            <Image
+                                src='http://localhost:3000/psycho-photo.png'
                                 alt='Онлайн консультация пациента с психологом'
                                 className={styles['psychologist-photo']}
+                                width={550}
+                                height={450}
                             />
                         </div>
                     </div>

@@ -64,16 +64,11 @@ min-height: 200px;
 
 .client-photo {
     position: relative;
-    width: 600px;
-    height: 600px;
-
 }
 
 .psychologist-photo {
     position: absolute;
     padding-right: 300px;
-    width: 550px;
-    height: 450px;
 
 }
 
