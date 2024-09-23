@@ -1,5 +1,5 @@
 import {useState} from "react";
-import styles from './PhoneInput.module.css';
+import styles from '@/components/PhoneInput/PhoneInput.module.css';
 
 function PhoneInput(){
     const [phone, setPhone] = useState<string>('');

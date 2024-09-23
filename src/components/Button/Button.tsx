@@ -1,7 +1,7 @@
 'use client';
 
-import styles from './Button.module.css';
-import {ButtonProps} from "./Button.props";
+import styles from '@/components/Button/Button.module.css';
+import {ButtonProps} from "@/components/Button/Button.props";
 import {useRouter} from "next/navigation";
 
 function Button({children, size = 'small'}): ButtonProps {

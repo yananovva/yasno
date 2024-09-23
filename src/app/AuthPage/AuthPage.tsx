@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "@/components/Button/Button";
 import PhoneInput from "@/components/PhoneInput/PhoneInput";
 
-import styles from './AuthPage.module.css';
+import styles from '@/app/AuthPage/AuthPage.module.css';
 import {useRouter} from "next/navigation";
 
 
