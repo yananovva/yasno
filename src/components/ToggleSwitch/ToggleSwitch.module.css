@@ -1,0 +1,61 @@
+.switcher_container {
+    text-align: center;
+    padding-left: 100px;
+}
+
+.switcher {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--light-gray);
+    border: 1px solid var(--light-gray);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.optionButton {
+    border: none;
+    padding: 8px 30px;
+    font-size: 20px;
+    line-height: 40px;
+    position: relative;
+    flex: 1;
+    z-index: 1;
+    color: var(--dark);
+    background: transparent;
+    cursor: pointer;
+    transition: font-weight 0.3s ease, color 0.3s ease;
+}
+
+.active {
+    background: var(--white);
+    font-weight: bold;
+}
+
+.toggleBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+.toggleBackground.left {
+    transform: translateX(0);
+}
+
+.toggleBackground.right {
+    transform: translateX(100%);
+}
+
+
+.price {
+    color: var(--gray);
+}
+

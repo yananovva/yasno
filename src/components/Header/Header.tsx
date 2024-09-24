@@ -1,5 +1,6 @@
 import styles from "@/components/Header/Header.module.css";
 import Button from "@/components/Button/Button";
+import Link from "next/link";
 
 
 function Header() {
@@ -16,12 +17,9 @@ function Header() {
                     </ul>
                 </div>
                 <div className={styles['header__login']}>
-                    <a className="header__link" href="/">
-                        <img className={styles['header__icon']}
-                             src='/header_icon.svg' alt={'Иконка замка'}
-                        />
+                    <Link className="header__link" href='/AuthPage'>
                         Вход
-                    </a>
+                    </Link>
                     <Button size='small'>Выбрать психолога</Button>
                 </div>
             </div>
