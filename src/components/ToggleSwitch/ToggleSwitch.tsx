@@ -26,7 +26,7 @@ const ToggleSwitch = () => {
                     Для себя
                 </button>
                 <button onClick={() => handleToggle('double')}
-                        className={`${styles['optionButton']} ${selectedOption === 'two' ? styles['active'] : ''}`}
+                        className={`${styles['optionButton']} ${selectedOption === 'double' ? styles['active'] : ''}`}
                 >
                     Для двоих
                 </button>

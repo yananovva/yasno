@@ -6,16 +6,21 @@ import Button from "@/components/Button/Button";
 import PhoneInput from "@/components/PhoneInput/PhoneInput";
 
 import styles from '@/app/AuthPage/AuthPage.module.css';
-import {useRouter} from "next/navigation";
+import React from "react";
 
-
-function AuthPage() {
-
-    const {push} = useRouter();
-    push('/AuthPage');
+export const metadata = {
+    title: 'Авторизация',
+    description: 'Страница входа',
+};
+export default function AuthPage() {
 
     return (
         <>
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>{metadata.title}</title>
+                <meta name="description" content={metadata.description} />
+            </head>
             <section className={styles['header']}>
                 <div className={styles['auth_header']}>
                     <div className={styles['header__logo']}>Ясно</div>
@@ -26,7 +31,7 @@ function AuthPage() {
                     </div>
                 </div>
             </section>
-            <section className={styles['form']}>
+            <section>
                 <div className={styles['auth_form']}>
                     <h2>Введите номер</h2>
                     <p className={styles['form__span']}>Пришлем код для входа, никаких звонков</p>
@@ -38,12 +43,12 @@ function AuthPage() {
                     </p>
                     <div className={styles['mail_login']}>
                         <Image className={styles['icon_mail']}
-                            src={}
-                             alt={'Иконка письма'}
+                               src='/public/mail-icon.png'
+                               alt={'Иконка письма'}
                         />
                         <div className={styles['mail_flex']}>
                             <Link className={styles['log_mail']}
-                               href='/Mail'>
+                                  href='/Mail'>
                                 Войти по почте
                             </Link>
                             <p>Для тех, у кого есть аккаунт</p>
@@ -51,10 +56,9 @@ function AuthPage() {
                     </div>
                 </div>
                 <div className={styles['form_footer']}>
-                    Служба поддержки</div>
+                    Служба поддержки
+                </div>
             </section>
         </>
     );
 }
-
-export default AuthPage;

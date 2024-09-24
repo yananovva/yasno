@@ -18,7 +18,7 @@ function MainPage() {
                         <div className={styles['main__actions']}>
                             <ToggleSwitch/>
                             <div className={styles['main__button']}>
-                                <Link href='/AuthPage'>
+                                <Link href='/src/app/AuthPage/AuthPage'>
 
                                     By{""}
                                     <Button size='big'>Подобрать психолога</Button>

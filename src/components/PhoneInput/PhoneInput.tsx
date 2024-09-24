@@ -1,8 +1,8 @@
-import {useState} from "react";
+// import {useState} from "react";
 import styles from '@/components/PhoneInput/PhoneInput.module.css';
 
 function PhoneInput(){
-    const [phone, setPhone] = useState<string>('');
+    // const [phone, setPhone] = useState<string>('');
 
     return (
         <form>

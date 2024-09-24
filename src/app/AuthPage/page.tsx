@@ -1,6 +1,6 @@
-import AuthPage from "./AuthPage";
+import AuthPage from "@/app/AuthPage/AuthPage";
 
-export default function Page() {
+export default function AuthPageLayout() {
     return (
         <div>
             <AuthPage/>
