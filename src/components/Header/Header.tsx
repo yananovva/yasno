@@ -17,7 +17,7 @@ function Header() {
                     </ul>
                 </div>
                 <div className={styles['header__login']}>
-                    <Link className="header__link" href='/AuthPage'>
+                    <Link className="header__link" href='/src/app/AuthPage/AuthPage'>
                         Вход
                     </Link>
                     <Button size='small'>Выбрать психолога</Button>
