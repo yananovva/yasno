@@ -1,5 +1,4 @@
-import React from "react";
-import AuthPage from "@/app/AuthPage/AuthPage";
+import AuthPage from "@/app/AuthPage/page";
 
 export default function AuthLayout() {
   return (

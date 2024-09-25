@@ -2,7 +2,7 @@ import {Roboto} from "next/font/google";
 import "@/app/styles/globals.css";
 import React from "react";
 import Header from "@/components/Header/Header";
-import MainPage from "@/components/MainPage/MainPage";
+import MainPage from "@/components/MainPage/page";
 
 
 const font = Roboto({subsets: ['latin'], weight: ['300', '400', '700', '900']});

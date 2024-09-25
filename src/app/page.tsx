@@ -1,6 +1,7 @@
-import MainPage from "@/components/MainPage/MainPage";
+import MainPage from "@/components/MainPage/page";
 
-export default function Home() {
+export default async function Home() {
+
   return (
 <div>
   <MainPage/>

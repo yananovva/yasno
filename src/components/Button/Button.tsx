@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProps> = ({ children, size }) => {
     const router = useRouter();
     const buttonSizeClass = size === 'big' ? styles['big_button'] : styles['small_button'];
     const handleClick = () => {
-        router.push('/AuthPage')
+        router.push('/Page')
     }
 
     return (
