@@ -2,7 +2,7 @@ import Button from "@/components/Button/Button";
 import ToggleSwitch from "@/components/ToggleSwitch/ToggleSwitch";
 import Image from "next/image";
 
-import styles from '@/components/MainPage/MainPage.module.css';
+import styles from '@/app/MainPage/MainPage.module.css';
 import Link from "next/link";
 
 function MainPage() {
