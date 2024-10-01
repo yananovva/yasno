@@ -1,11 +1,20 @@
+'use client';
+
 import Button from "@/components/Button/Button";
 import ToggleSwitch from "@/components/ToggleSwitch/ToggleSwitch";
 import Image from "next/image";
 
 import styles from '@/app/MainPage/MainPage.module.css';
-import Link from "next/link";
+import {useRouter} from "next/navigation";
+import React from "react";
 
 function MainPage() {
+
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push('/AuthPage');
+    }
 
     return (
         <>
@@ -19,8 +28,7 @@ function MainPage() {
                         <div className={styles['main__actions']}>
                             <ToggleSwitch/>
                             <div className={styles['main__button']}>
-                                <Button size='big'>
-                                    <Link href={'/AuthPage'}></Link>
+                                <Button size='big' onClick={handleClick}>
                                     Подобрать психолога
                                 </Button>
                             </div>

@@ -1,20 +1,20 @@
 import {Roboto} from "next/font/google";
 import "@/app/styles/globals.css";
-import React from "react";
+import React, {ReactNode} from "react";
 import Header from "@/components/Header/Header";
-import Head from "next/head";
-
 
 const font = Roboto({subsets: ['latin'], weight: ['300', '400', '700', '900']});
 
+export const metadata = {
+    title: 'Ясно. Психологи',
+    icons: {
+        icon: '/favicon.ico',
+    },
+};
 
-export default function RootLayout({children}) {
+export default function RootLayout({children}: {children: ReactNode}) {
     return (
         <html lang="ru">
-        <Head>
-            <title>Ясно. Психологи</title>
-            <link rel="icon" href="/favicon.png"/>
-        </Head>
         <body className={font.className}>
         <header>
             <Header/>

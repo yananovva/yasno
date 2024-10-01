@@ -1,20 +1,18 @@
 'use client';
 
-import Head from "next/head";
 import React from 'react';
 import {Carousel} from 'antd';
 import styles from '@/app/PsychoPage/PsychoPage.module.css';
 
 
-const Psycho: React.FC = () => {
+function Psycho () {
+
     const onChange = (currentSlide: number) => {
         console.log(currentSlide);
     }
+
     return (
         <>
-            <Head>
-                <title>Для психологов</title>
-            </Head>
             <Carousel
                 afterChange={onChange}
                 className={styles['carousel']}>

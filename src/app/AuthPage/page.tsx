@@ -1,75 +1,77 @@
 'use client';
 
 import React from 'react';
-import {LockOutlined, UserOutlined} from '@ant-design/icons';
-import {Button, Checkbox, Form, Input, Flex} from 'antd';
-import Head from "next/head";
 import styles from '@/app/AuthPage/AuthPage.module.css';
-import {useForm} from 'react-hook-form';
+import {SubmitHandler, useForm} from 'react-hook-form';
 import {AuthPageProps} from "@/app/AuthPage/AuthPage.props";
+import Head from "next/head";
 
 
-const Auth: React.FC = () => {
-    const onFinish = (values: never) => {
-        console.log('Received values of form: ', values);
-    }
+function Auth(){
 
-    const {register, handleSubmit} = useForm({
+    const {register, handleSubmit, formState} =
+        useForm<AuthPageProps>({
         mode: 'onChange',
     });
 
-    const onSubmit = (data: never) => {
+    const emailError = formState.errors['email']?.message;
+    const passwordError = formState.errors['password']?.message;
+    const onSubmit: SubmitHandler<AuthPageProps> = data => {
         console.log(data);
     }
-
 
     return (
         <>
             <Head>
                 <title>Авторизация</title>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <Form
-                name="login"
-                initialValues={{remember: true}}
-                style={{maxWidth: 360}}
-                onFinish={onFinish}
+            <form
                 className={styles['auth']}
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <h1>Авторизуйтесь</h1>
-                <Form.Item
-                    name="email"
-                    rules={[{required: true, message: 'Please input your Email!'}]}
-                >
-                    <Input prefix={<UserOutlined/>} placeholder="Email"
-                           {...register('email', {
-                           required: 'This field is required',
-                           })}
-                           />
-                </Form.Item>
-                <Form.Item
-                    name="password"
-                    rules={[{required: true, message: 'Please input your Password!'}]}
-                >
-                    <Input prefix={<LockOutlined/>} type="password" placeholder="Password"/>
-                </Form.Item>
-                <Form.Item>
-                    <Flex justify="space-between" align="center">
-                        <Form.Item name="remember" valuePropName="checked" noStyle>
-                            <Checkbox>Запомнить меня</Checkbox>
-                        </Form.Item>
-                        <a href="">Забыли пароль?</a>
-                    </Flex>
-                </Form.Item>
-
-                <Form.Item>
-                    <Button block type="primary" htmlType="submit">
-                        Войти
-                    </Button>
-                    или <a href="">Зарегистрироваться</a>
-                </Form.Item>
-            </Form>
+                <input
+                    type='text'
+                    placeholder="Email"
+                    className={styles['input']}
+                    {...register('email', {
+                        required: 'This field is required',
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                            message: 'Invalid email address!',
+                        }
+                    })}
+                />
+                {emailError && <p className={styles['email_error']}>{emailError}</p>}
+                <input
+                    type="password"
+                    placeholder="Password"
+                    className={styles['input']}
+                    {...register('password', {
+                        required: 'This field is required',
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                            message: 'Invalid password!',
+                        }
+                    })}
+                />
+                {passwordError && <p className={styles['email_error']}>{passwordError}</p>}
+                <div className={styles['remember']}>
+                    <input
+                        type='checkbox'
+                        id='rememberMe'
+                        className={styles['remember_check']}
+                        {...register('rememberMe')}
+                    />
+                    <label htmlFor='rememberMe' className={styles['remember_label']}>Запомнить меня</label>
+                </div>
+                <button
+                    type='submit'
+                    className={styles['button']}>
+                    Войти
+                </button>
+            </form>
         </>
     );
 }

@@ -1,9 +1,10 @@
 'use client';
+
 import styles from "@/components/ToggleSwitch/ToggleSwitch.module.css";
 import {useState} from "react";
 
 
-const ToggleSwitch = () => {
+function ToggleSwitch() {
     const [selectedOption, setSelectedOption] = useState<'single' | 'double'>('single');
 
     const handleToggle = (option: 'single' | 'double') => {
