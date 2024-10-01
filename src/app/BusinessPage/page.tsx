@@ -1,13 +1,15 @@
 import Head from "next/head";
 import React from 'react';
 import {Button, Col, Row, Statistic} from 'antd';
+import styles from '@/app/BusinessPage/BusinessPage.module.css';
 
 const Business: React.FC = () => (
     <>
         <Head>
             <title>Для бизнеса</title>
         </Head>
-        <Row gutter={16}>
+        <Row gutter={16}
+        className={styles['row']}>
             <Col span={12}>
                 <Statistic title="Active Users" value={112893}/>
             </Col>

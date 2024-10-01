@@ -36,15 +36,6 @@ function MainPage() {
                                 height={600}
                             />
                         </div>
-                        <div className={styles['banner__phone']}>
-                            <Image
-                                src='http://localhost:3000/psycho-photo.png'
-                                alt='Онлайн консультация пациента с психологом'
-                                className={styles['psychologist-photo']}
-                                width={550}
-                                height={450}
-                            />
-                        </div>
                     </div>
                 </div>
             </section>

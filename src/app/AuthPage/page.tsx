@@ -4,11 +4,22 @@ import React from 'react';
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import {Button, Checkbox, Form, Input, Flex} from 'antd';
 import Head from "next/head";
+import styles from '@/app/AuthPage/AuthPage.module.css';
+import {useForm} from 'react-hook-form';
+import {AuthPageProps} from "@/app/AuthPage/AuthPage.props";
 
 
 const Auth: React.FC = () => {
     const onFinish = (values: never) => {
         console.log('Received values of form: ', values);
+    }
+
+    const {register, handleSubmit} = useForm({
+        mode: 'onChange',
+    });
+
+    const onSubmit = (data: never) => {
+        console.log(data);
     }
 
 
@@ -23,12 +34,19 @@ const Auth: React.FC = () => {
                 initialValues={{remember: true}}
                 style={{maxWidth: 360}}
                 onFinish={onFinish}
+                className={styles['auth']}
+                onSubmit={handleSubmit(onSubmit)}
             >
+                <h1>Авторизуйтесь</h1>
                 <Form.Item
-                    name="username"
-                    rules={[{required: true, message: 'Please input your Username!'}]}
+                    name="email"
+                    rules={[{required: true, message: 'Please input your Email!'}]}
                 >
-                    <Input prefix={<UserOutlined/>} placeholder="Username"/>
+                    <Input prefix={<UserOutlined/>} placeholder="Email"
+                           {...register('email', {
+                           required: 'This field is required',
+                           })}
+                           />
                 </Form.Item>
                 <Form.Item
                     name="password"
