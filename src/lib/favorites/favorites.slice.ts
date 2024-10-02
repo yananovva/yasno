@@ -8,12 +8,15 @@ export const favoritesSlice = createSlice({
     initialState,
     reducers: {
         toggleFavorites: (state, {payload: course}) => {
-            const isExist = state.some(c => c.id === course.id);
+            const isExists = state.some(c => c.id === course.id);
 
-            if (isExist)
-                state = state.filter(c => c.id !== course.id)
-            else
-                state.push(course);
+            if (isExists) {
+                const index = state.findIndex(item => item.id === course.id)
+                if (index !== -1) {
+                    state.slice(index, 1)
+                } else
+                    state.push(course);
+            }
         }
     }
 });
