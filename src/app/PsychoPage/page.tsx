@@ -1,34 +1,25 @@
-'use client';
-
 import React from 'react';
-import {Carousel} from 'antd';
-import styles from '@/app/PsychoPage/PsychoPage.module.css';
+import CourseItem from "@/components/CourseItem/CourseItem";
 
 
-function Psycho () {
-
-    const onChange = (currentSlide: number) => {
-        console.log(currentSlide);
-    }
-
+function Psycho() {
     return (
         <>
-            <Carousel
-                afterChange={onChange}
-                className={styles['carousel']}>
-                <div>
-                    <h3>Курс 1</h3>
-                </div>
-                <div>
-                    <h3>Курс 2</h3>
-                </div>
-                <div>
-                    <h3>Курс 3</h3>
-                </div>
-                <div>
-                    <h3>Курс 4</h3>
-                </div>
-            </Carousel>
+            <CourseItem course={{
+                id: 1,
+                name: 'Психология развития',
+            }}
+            />
+            <CourseItem course={{
+                id: 2,
+                name: 'Семейная психология',
+            }}
+            />
+            <CourseItem course={{
+                id: 3,
+                name: 'Детская психология',
+            }}
+            />
         </>
     );
 }

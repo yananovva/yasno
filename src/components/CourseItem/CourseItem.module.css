@@ -1,0 +1,28 @@
+.courses {
+    /*height: 160px;*/
+    color: #fff;
+    text-align: center;
+    background: var(--dark);
+    border-radius: 30px;
+    margin: 20px auto;
+    padding: 40px;
+    max-width: 400px;
+
+
+}
+
+.psycho_btn {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: background 0.4s ease-in-out;
+}
+
+.psycho_btn:hover {
+    background: var(--primary-hover);
+}
