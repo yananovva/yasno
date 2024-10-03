@@ -18,6 +18,7 @@ function CourseItem({course}) {
 
         <>
             <div className={styles['courses']}>
+                <img src={course.image} alt={course.name} width={100} className={styles['image']}/>
                     <h3>{course.name}</h3>
                 <button
                     className={styles['psycho_btn']}

@@ -7,8 +7,6 @@
     margin: 20px auto;
     padding: 40px;
     max-width: 400px;
-
-
 }
 
 .psycho_btn {
@@ -25,4 +23,8 @@
 
 .psycho_btn:hover {
     background: var(--primary-hover);
+}
+
+.image {
+    border-radius: 5px;
 }

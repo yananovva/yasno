@@ -1,0 +1,19 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Психология развития",
+      "image": "https://images.app.goo.gl/7WFkTCoYyFCdaVDd8"
+    },
+    {
+      "id": 2,
+      "name": "Семейная психология",
+      "image": "https://images.app.goo.gl/9VrrdxcaixxRtfUD9"
+    },
+    {
+      "id": 3,
+      "name": "Детская психология",
+      "image": "https://images.app.goo.gl/rCcryV32ZKGr4siy7"
+    }
+  ]
+}

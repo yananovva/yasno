@@ -1,25 +1,21 @@
 import React from 'react';
 import CourseItem from "@/components/CourseItem/CourseItem";
+import {useGetCoursesQuery} from "@/lib/api/api";
 
 
 function Psycho() {
+    const {isLoading, data} = useGetCoursesQuery;
+
     return (
         <>
-            <CourseItem course={{
-                id: 1,
-                name: 'Психология развития',
-            }}
-            />
-            <CourseItem course={{
-                id: 2,
-                name: 'Семейная психология',
-            }}
-            />
-            <CourseItem course={{
-                id: 3,
-                name: 'Детская психология',
-            }}
-            />
+            {isLoading ? (
+                <div>Loading...</div>
+            ) : data ? (
+                data.map(course =>
+                    <CourseItem key={course.id} course={course}/>)
+            ) : (
+                <div>Not found</div>
+            )}
         </>
     );
 }
