@@ -15,8 +15,6 @@ function CourseItem({course}) {
     const isExists = favorites.some(c => c.id === course.id);
 
     return (
-
-        <>
             <div className={styles['courses']}>
                 <img src={course.image} alt={course.name} width={100} className={styles['image']}/>
                     <h3>{course.name}</h3>
@@ -27,7 +25,6 @@ function CourseItem({course}) {
                     {isExists ? 'Удалить из избранного' : 'Добавить в избранное'}
                 </button>
             </div>
-        </>
     );
 }
 

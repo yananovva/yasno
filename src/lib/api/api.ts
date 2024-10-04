@@ -1,7 +1,7 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query";
+import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 
-const API_URL = 'http://localhost:4300/courses';
+const API_URL = 'http://localhost:5002/api/courses';
 
 export const api = createApi({
     reducerPath: 'api',
@@ -11,16 +11,17 @@ export const api = createApi({
     }),
     endpoints: builder => ({
         getCourses: builder.query({
-            query: () => '/courses',
+            query: () => '/?_sort=id&_order=desc',
+            providesTags: () => [{
+                type: 'Course',
+            }],
         }),
-        createCourse: builder.mutation({
-            query: (course) => ({
-                body: course,
-                url: '/',
-                method: 'POST',
-            }),
-        })
-    })
+    }),
 });
 
 export const {useGetCoursesQuery} = api;
+
+
+
+
+
