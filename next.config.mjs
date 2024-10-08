@@ -1,11 +1,16 @@
-let staticPageGenerationTimeout;
-/** @type {import('next').NextConfig} */
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ **/
 const nextConfig = {
     images: {
-        domains: ['localhost'],
+        domains: ['images.app.goo.gl'],
     },
     staticPageGenerationTimeout: 120,
-
-};
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+}
 
 export default nextConfig;

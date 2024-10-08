@@ -1,8 +1,9 @@
 'use client';
 
-import {useState} from "react";
+import {FormEvent, useState} from "react";
 import styles from '@/components/CreateCourse/CreateCourse.module.css';
 import {useCreateCourseMutation} from "@/lib/api/course.api";
+import {ICourseData} from '@/types/course.types';
 
 
 const defaultValue = {
@@ -11,16 +12,16 @@ const defaultValue = {
 }
 
 export default function CreateCourse() {
-    const [course, setCourse] = useState(defaultValue);
+    const [course, setCourse] = useState<ICourseData>(defaultValue);
 
     const [createCourse] = useCreateCourseMutation();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         createCourse(course).then(() => {
             setCourse(defaultValue);
-        })
-    }
+        });
+    };
 
     return (
         <div>

@@ -23,6 +23,7 @@
     transition: border-color 0.4s ease-in-out;
 }
 
+
 .input:focus {
     border-color: var(--secondary);
 }

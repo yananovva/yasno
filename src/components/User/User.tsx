@@ -1,8 +1,8 @@
-import {useSelector} from "react-redux";
 import {useActions} from "@/hooks/useActions";
+import {useTypedSelector} from "@/hooks/useTypedSelector";
 
 export default function User() {
-    const {isLoading, error, user} = useSelector(state =>
+    const {isLoading, error, user} = useTypedSelector(state =>
         state.user);
 
     const {getUserById} = useActions();
@@ -15,7 +15,7 @@ export default function User() {
             {isLoading ? (
                 <div>Loading...</div>
             ) : error ? (
-                <div>{error.message}</div>
+                <div>{error}</div>
             ) : user?.name ? (
                 <h2>Пользователь: {user.name}</h2>
             ) : (
