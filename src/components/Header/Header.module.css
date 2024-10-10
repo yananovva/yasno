@@ -13,10 +13,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-
-}
-
-.header__layout {
+    position: relative;
     height: 80px;
 }
 
@@ -25,16 +22,16 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    margin-left: 350px;
 }
 
 .header__menu-link {
-    color:var(--dark);
+    color: var(--dark);
     font-weight: 400;
     list-style: none;
     cursor: pointer;
     text-decoration: none;
 }
-
 
 .header__login {
     display: flex;
@@ -43,8 +40,32 @@
     gap: 20px;
     padding-right: 100px;
     cursor: pointer;
-
 }
 
+.favorites {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.favorites_span {
+    font-size: 12px;
+    background: var(--tomato);
+    border-radius: 8px;
+    color: var(--white);
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
 
