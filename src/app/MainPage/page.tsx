@@ -1,11 +1,21 @@
-import styles from '@/components/MainPage/MainPage.module.css';
+'use client';
+
 import Button from "@/components/Button/Button";
 import ToggleSwitch from "@/components/ToggleSwitch/ToggleSwitch";
-import Link from "next/link";
 import Image from "next/image";
 
+import styles from '@/app/MainPage/MainPage.module.css';
+import {useRouter} from "next/navigation";
+import React from "react";
 
 function MainPage() {
+
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push('/AuthPage');
+    }
+
     return (
         <>
             <section className={styles['main']}>
@@ -18,11 +28,9 @@ function MainPage() {
                         <div className={styles['main__actions']}>
                             <ToggleSwitch/>
                             <div className={styles['main__button']}>
-                                <Link href='/src/app/AuthPage/AuthPage'>
-
-                                    By{""}
-                                    <Button size='big'>Подобрать психолога</Button>
-                                </Link>
+                                <Button size='big' onClick={handleClick}>
+                                    Подобрать психолога
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -36,15 +44,6 @@ function MainPage() {
                                 height={600}
                             />
                         </div>
-                        <div className={styles['banner__phone']}>
-                            <Image
-                                src='http://localhost:3000/psycho-photo.png'
-                                alt='Онлайн консультация пациента с психологом'
-                                className={styles['psychologist-photo']}
-                                width={550}
-                                height={450}
-                            />
-                        </div>
                     </div>
                 </div>
             </section>
@@ -55,7 +54,8 @@ function MainPage() {
                             <div className={styles['statistics__item item-1']}>
                                 <div className={styles['statistics__wrap']}>
                                     <p className={styles['statistics__value']}>320 000 +</p>
-                                    <p className={styles['statistics__text']}>человек нашли своего <br/> психолога онлайн</p>
+                                    <p className={styles['statistics__text']}>человек нашли своего <br/> психолога
+                                        онлайн</p>
                                 </div>
                             </div>
                             <div className={styles['statistics__item item-2']}>
@@ -73,7 +73,8 @@ function MainPage() {
                             <div className={styles['statistics__item item-4']}>
                                 <div className={styles['statistics__wrap']}>
                                     <p className={styles['statistics__value']}>81 %</p>
-                                    <p className={styles['statistics__text']}>клиентов чувствуют <br/> результат после 5-й
+                                    <p className={styles['statistics__text']}>клиентов чувствуют <br/> результат после
+                                        5-й
                                         сессии</p>
                                 </div>
                             </div>
