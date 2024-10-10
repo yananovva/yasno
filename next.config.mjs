@@ -5,7 +5,7 @@
  **/
 const nextConfig = {
     images: {
-        domains: ['images.app.goo.gl'],
+        domains: ['localhost'],
     },
     staticPageGenerationTimeout: 120,
     typescript: {
